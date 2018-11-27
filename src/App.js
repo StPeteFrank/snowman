@@ -57,12 +57,24 @@ class App extends Component {
       return <img src={snowman_0} />
     } else if (this.state.snowMenNumber === 1) {
       return <img src={snowman_1} />
+    } else if (this.state.snowMenNumber === 2) {
+      return <img src={snowman_2} />
+    } else if (this.state.snowMenNumber === 3) {
+      return <img src={snowman_3} />
+    } else if (this.state.snowMenNumber === 4) {
+      return <img src={snowman_4} />
+    } else if (this.state.snowMenNumber === 5) {
+      return <img src={snowman_5} />
+    } else if (this.state.snowMenNumber === 6) {
+      return <img src={snowman_6} />
+    } else if (this.state.snowMenNumber === 7) {
+      return <img src={snowman_7} />
     }
   }
   render() {
     return (
       <div className="App">
-        <h2>Snowman</h2>
+        <h2>Snowman!</h2>
 
         <div className="snowmanImages">{this.snowmanImages()}</div>
 
