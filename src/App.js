@@ -186,9 +186,9 @@ class App extends Component {
 
 export default App
 
-//DONE. Need 26 buttons. 1 for each letter in the alphabet.
+//DONE Need 26 buttons. 1 for each letter in the alphabet.
 //DONE Area for 7 blank spaces for game board.
-//Area for snowMan images to display.
+//DONE Area for snowMan images to display.
 //DONE Ability for word to be selected from wordList randomly once new game is started.
 //DONE Buttons need to be functional on browser. onClick.
 //DONE When alphabet button is pressed check to see if it belongs in the word chosen.
