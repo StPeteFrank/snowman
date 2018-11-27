@@ -20,6 +20,17 @@ class App extends Component {
       lettersAlreadyChosen: [],
       snowMenNumber: 0,
       lettersChosenCorrectly: []
+
+      // this.snowmen = [
+      //   snowman_step_0,
+      //   snowman_step_1,
+      //   snowman_step_2,
+      //   snowman_step_3,
+      //   snowman_step_4,
+      //   snowman_step_5,
+      //   snowman_step_6,
+      //   snowman_step_7
+      // ]
     }
   }
 
@@ -37,21 +48,30 @@ class App extends Component {
   //   //   return letter
   //   // }
   // }
+  //Guard clause below.
   letterClicked = event => {
+    if (this.isLetterAlreadyChosen(event.target.value)) {
+      return
+    }
+
     this.state.lettersAlreadyChosen.push(event.target.value)
     this.setState({
       lettersAlreadyChosen: this.state.lettersAlreadyChosen
-    })
+    }) //changing the state above
+
     console.log(this.state.secretWord)
+
     if (this.state.secretWord.split('').includes(event.target.value)) {
       this.state.lettersChosenCorrectly.push(event.target.value)
       this.setState({
         lettersChosenCorrectly: this.state.lettersChosenCorrectly,
         snowMenNumber: this.state.snowMenNumber + 1
       })
+
       console.log(this.state.snowMenNumber)
     }
   }
+  //returns which snowman to return.
   snowmanImages = () => {
     if (this.state.snowMenNumber === 0) {
       return <img src={snowman_0} />
@@ -71,10 +91,15 @@ class App extends Component {
       return <img src={snowman_7} />
     }
   }
+
+  isLetterAlreadyChosen = letter => {
+    return this.state.lettersAlreadyChosen.includes(letter)
+  }
+
   render() {
     return (
       <div className="App">
-        <h2>Snowman!</h2>
+        <h2>Snowman</h2>
 
         <div className="snowmanImages">{this.snowmanImages()}</div>
 
@@ -100,7 +125,11 @@ class App extends Component {
         </div>
 
         <div class="letterBoard">
-          <button value="a" onClick={this.letterClicked}>
+          <button
+            value="a"
+            disabled={this.isLetterAlreadyChosen('a')}
+            onClick={this.letterClicked}
+          >
             a
           </button>
           <button value="b" onClick={this.letterClicked}>
@@ -193,7 +222,15 @@ export default App
 //DONE Buttons need to be functional on browser. onClick.
 //DONE When alphabet button is pressed check to see if it belongs in the word chosen.
 //DONE If alphabet letter does belong add it to the correct space.
-//If alphabet button does not belong in word add a piece of the snowman image.
-//Need to add an image per missed letter called.
+
+//Need array for alphabet
+//Need snowman array
+//How to stop a single correct letter from completing snowman
+//Block player form pressing already chosen letter
 //Once the 7 pieces of the snow man are displayed, or out of choices, game over.
+//Go check out the css. Nothing fancy.
+//Extract components.
+
+//--Adventure and Epic--
+//How do you lose the game?
 //New game button.
