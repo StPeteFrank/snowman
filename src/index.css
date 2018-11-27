@@ -18,7 +18,7 @@ code {
   align-items: center;
   justify-content: center;
   background-position: center;
-  font-size: 3vw;
+  font-size: 4vw;
 }
 
 button {
@@ -30,8 +30,13 @@ button {
   width: 30vh;
 }
 ul {
-  width: 300px;
+  width: 200px;
   list-style: none;
   display: flex;
   justify-content: space-evenly;
+}
+.letterBoard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
