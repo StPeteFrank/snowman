@@ -225,12 +225,13 @@ export default App
 
 //Need array for alphabet
 //Need snowman array
-//How to stop a single correct letter from completing snowman
-//Block player form pressing already chosen letter
-//Once the 7 pieces of the snow man are displayed, or out of choices, game over.
+//DONE How to stop a single correct letter from completing snowman
+//DONE Block player form pressing already chosen letter
+
 //Go check out the css. Nothing fancy.
 //Extract components.
 
 //--Adventure and Epic--
 //How do you lose the game?
 //New game button.
+//Once the 7 pieces of the snow man are displayed, or out of choices, game over.

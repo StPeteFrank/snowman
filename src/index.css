@@ -6,6 +6,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./snowmanImages/snowy.jpeg);
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
 }
 
 code {
@@ -20,7 +24,9 @@ code {
   background-position: center;
   font-size: 4vw;
 }
-
+h2 {
+  color: whitesmoke;
+}
 button {
   font-size: 2vw;
   border-radius: 5px;
