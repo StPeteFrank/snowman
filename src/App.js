@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import snowman_0 from './snowmanImages/step_0.png'
 import snowman_1 from './snowmanImages/step_1.png'
@@ -15,39 +14,43 @@ class App extends Component {
   constructor(props) {
     super(props)
 
+    this.letterboard = [
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      'f',
+      'g',
+      'h',
+      'i',
+      'j',
+      'k',
+      'l',
+      'm',
+      'n',
+      'o',
+      'p',
+      'q',
+      'r',
+      's',
+      't',
+      'u',
+      'v',
+      'w',
+      'x',
+      'y',
+      'z'
+    ]
+
     this.state = {
       secretWord: wordList[Math.floor(Math.random() * wordList.length)],
       lettersAlreadyChosen: [],
       snowMenNumber: 0,
       lettersChosenCorrectly: []
-
-      // this.snowmen = [
-      //   snowman_step_0,
-      //   snowman_step_1,
-      //   snowman_step_2,
-      //   snowman_step_3,
-      //   snowman_step_4,
-      //   snowman_step_5,
-      //   snowman_step_6,
-      //   snowman_step_7
-      // ]
     }
   }
 
-  // letterToShow = letter => {
-
-  //   // return _ if we have not already chosen this letter
-  //   // if (this.state.secretWord.split('').includes(letter)) {
-  //   //   return letter
-  //   // } else {
-  //   //   return '_ '
-  //   // }
-
-  //   // returns the letter if we have already chosen this letter
-  //   // if (this.state.lettersAlreadyChosen(letter)) {
-  //   //   return letter
-  //   // }
-  // }
   //Guard clause below.
   letterClicked = event => {
     if (this.isLetterAlreadyChosen(event.target.value)) {
@@ -104,109 +107,30 @@ class App extends Component {
         <div className="snowmanImages">{this.snowmanImages()}</div>
 
         <div class="letterSpaces">
-          {this.state.secretWord.split('').map(letter => {
+          {this.state.secretWord.split('').map((letter, index) => {
             return (
-              <span>
+              <span key={index}>
                 {this.state.lettersAlreadyChosen.includes(letter)
                   ? letter
                   : '_ '}
               </span>
             )
           })}
-          {/* <ul>
-            <li>{this.letterToShow('s')}</li>
-            <li>{this.letterToShow('c')}</li>
-            <li>{this.letterToShow('r')}</li>
-            <li>{this.letterToShow('o')}</li>
-            <li>{this.letterToShow('t')}</li>
-            <li>{this.letterToShow('a')}</li>
-            <li>{this.letterToShow('l')}</li>
-          </ul> */}
         </div>
 
         <div class="letterBoard">
-          <button
-            value="a"
-            disabled={this.isLetterAlreadyChosen('a')}
-            onClick={this.letterClicked}
-          >
-            a
-          </button>
-          <button value="b" onClick={this.letterClicked}>
-            b
-          </button>
-          <button value="c" onClick={this.letterClicked}>
-            c
-          </button>
-          <button value="d" onClick={this.letterClicked}>
-            d
-          </button>
-          <button value="e" onClick={this.letterClicked}>
-            e
-          </button>
-          <button value="f" onClick={this.letterClicked}>
-            f
-          </button>
-          <button value="g" onClick={this.letterClicked}>
-            g
-          </button>
-          <button value="h" onClick={this.letterClicked}>
-            h
-          </button>
-          <button value="i" onClick={this.letterClicked}>
-            i
-          </button>
-          <button value="j" onClick={this.letterClicked}>
-            j
-          </button>
-          <button value="k" onClick={this.letterClicked}>
-            k
-          </button>
-          <button value="l" onClick={this.letterClicked}>
-            l
-          </button>
-          <button value="m" onClick={this.letterClicked}>
-            m
-          </button>
-          <button value="n" onClick={this.letterClicked}>
-            n
-          </button>
-          <button value="o" onClick={this.letterClicked}>
-            o
-          </button>
-          <button value="p" onClick={this.letterClicked}>
-            p
-          </button>
-          <button value="q" onClick={this.letterClicked}>
-            q
-          </button>
-          <button value="r" onClick={this.letterClicked}>
-            r
-          </button>
-          <button value="s" onClick={this.letterClicked}>
-            s
-          </button>
-          <button value="t" onClick={this.letterClicked}>
-            t
-          </button>
-          <button value="u" onClick={this.letterClicked}>
-            u
-          </button>
-          <button value="v" onClick={this.letterClicked}>
-            v
-          </button>
-          <button value="w" onClick={this.letterClicked}>
-            w
-          </button>
-          <button value="x" onClick={this.letterClicked}>
-            x
-          </button>
-          <button value="y" onClick={this.letterClicked}>
-            y
-          </button>
-          <button value="z" onClick={this.letterClicked}>
-            z
-          </button>
+          {this.letterboard.map((letter, index) => {
+            return (
+              <button
+                key={index}
+                value={letter}
+                disabled={this.isLetterAlreadyChosen(letter)}
+                onClick={this.letterClicked}
+              >
+                {letter.toUpperCase()}
+              </button>
+            )
+          })}
         </div>
       </div>
     )
