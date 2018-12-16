@@ -6,7 +6,7 @@
 
 ## Description
 
-This project was to build an app called Snowman based on the classic hangman game. It had to follow the similar rules as the original. Projected created using JavaScript, React, and utilizing JSON components.
+This project was to build an app called Snowman based on the classic hangman game. It had to follow the similar rules as the original. Project created using JavaScript, React, and utilizing JSON components.
 
 https://StPeteFrank-Snowman.surge.sh
 
