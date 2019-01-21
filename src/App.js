@@ -50,13 +50,11 @@ class App extends Component {
       lettersChosenCorrectly: []
     }
   }
-
   //Guard clause below.
   letterClicked = event => {
     if (this.isLetterAlreadyChosen(event.target.value)) {
       return
     }
-
     this.state.lettersAlreadyChosen.push(event.target.value)
     this.setState({
       lettersAlreadyChosen: this.state.lettersAlreadyChosen
@@ -70,11 +68,9 @@ class App extends Component {
         lettersChosenCorrectly: this.state.lettersChosenCorrectly,
         snowMenNumber: this.state.snowMenNumber + 1
       })
-
       console.log(this.state.snowMenNumber)
     }
   }
-  //returns which snowman to return.
   snowmanImages = () => {
     if (this.state.snowMenNumber === 0) {
       return <img src={snowman_0} />
